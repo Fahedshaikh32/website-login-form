@@ -24,8 +24,9 @@ A warm, editorial-style login card with a serif/sans type pairing, a soft teal a
 
 ## Preview
 
+
 <div align="center">
-<img width="900" alt="Login page preview" src="https://github.com/user-attachments/assets/504e64f7-9df7-4e14-865b-b1e3a6eeffe6" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c823ef3-877d-4017-a2b6-b80252f19f43" />
 </div>
 
 ## Features
