@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f6f1e9;
+      --card: #ffffff;
+      --ink: #23201b;
+      --muted: #8a8478;
+      --accent: #1e5f5a;
+      --accent-soft: #cde8e3;
+      --border: #ece5d8;
+
+      --font-display: "Fraunces", serif;
+      --font-body: "Inter", sans-serif;
+
+      --radius: 16px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg);
+      font-family: var(--font-body);
+      color: var(--ink);
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      top: -120px;
+      left: -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.12;
+      filter: blur(10px);
+    }
+
+    .login__form {
+      width: 380px;
+      max-width: 90vw;
+      padding: 40px 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(35, 32, 27, 0.08);
+    }
+
+    .login__eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .login__title {
+      margin-top: 6px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .field {
+      margin-top: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    input {
+      width: 100%;
+      height: 46px;
+      padding: 0 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input::placeholder {
+      color: var(--muted);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .login__submit {
+      width: 100%;
+      margin-top: 32px;
+      padding: 13px 0;
+      background: var(--accent);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+    }
+
+    .login__submit:hover {
+      opacity: 0.9;
+    }
+
+    .login__footer {
+      margin-top: 20px;
+      font-size: 13px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .login__footer a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .login__footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 420px) {
+      .login__form {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <span class="blob" aria-hidden="true"></span>
+
+  <main class="login">
+    <form class="login__form" action="#" method="post" novalidate>
+      <p class="login__eyebrow">Welcome back</p>
+      <h1 class="login__title">Sign in to your account</h1>
+
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="username" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+      </div>
+
+      <button type="submit" class="login__submit">Log In</button>
+
+      <p class="login__footer">Don't have an account? <a href="#">Sign up</a></p>
+    </form>
+  </main>
+
+</body>
+</html>
