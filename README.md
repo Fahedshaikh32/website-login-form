@@ -4,7 +4,7 @@
 
 **A clean, modern login page UI built with pure HTML5 and CSS3.**
 
-No frameworks, no dependencies — just a glassmorphism-style form with animated gradient shapes and a fully responsive layout.
+A warm, editorial-style login card with a serif/sans type pairing, a soft teal accent, and a single self-contained file — no build tools, no dependencies.
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](#)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](#)
@@ -30,11 +30,12 @@ No frameworks, no dependencies — just a glassmorphism-style form with animated
 
 ## Features
 
-- 🎨 **Glassmorphism design** — frosted-glass form with `backdrop-filter: blur()` over a dark background
-- 🟠🔵 **Animated gradient shapes** — floating blurred circles for visual depth
-- 📱 **Responsive layout** — centers and scales cleanly across screen sizes
-- 🧩 **Minimal, semantic markup** — a single form with labeled username/password fields
-- ⚡ **Zero dependencies** — plain HTML and CSS, no build step required
+- 🎨 **Warm, editorial design** — cream background, italic serif heading, and a single deep-teal accent color
+- 🧩 **Self-contained single file** — all CSS lives inside `<style>` in `index.html`, so there's nothing to misconfigure or lose track of
+- ⌨️ **Accessible form markup** — every `<label>` is properly linked to its `<input>` via `for`/`id`, with `autocomplete` hints
+- 🎯 **Interactive focus states** — inputs highlight with a soft teal glow on focus
+- 📱 **Responsive layout** — scales cleanly down to mobile widths
+- ⚡ **Zero dependencies** — no frameworks, no build step, just HTML and CSS (plus a Google Fonts link for typography)
 
 ## Getting Started
 
@@ -62,42 +63,35 @@ xdg-open index.html
 start index.html
 ```
 
+Or simply double-click `index.html` in your file explorer — every style is embedded in the file itself, so it will always render fully styled, with no separate stylesheet to keep track of.
+
 ## Project Structure
 
 ```
 .
-├── index.html         # Page markup: background shapes + login form
-├── css/
-│   └── style.css      # Glassmorphism styling, gradients, layout
+├── index.html    # Markup + embedded styles (single self-contained file)
 └── README.md
 ```
-
-The stylesheet lives under `css/` and uses lowercase, hyphen-free naming throughout, so the project behaves consistently on case-sensitive hosts (Linux servers, GitHub Pages) as well as Windows/macOS.
-
-### Code conventions
-
-- **Semantic HTML** — the page uses `<main>`, proper `<label for>`/`<input id>` pairing, and `autocomplete` hints instead of unlabeled divs
-- **BEM-style class names** — e.g. `login__form`, `login__submit`, `shape--blue` — so structure and intent are clear from the markup alone
-- **CSS custom properties** — colors, gradients, fonts, and border radii are defined once in a `:root` token block and reused, so the theme can be changed in one place
-- **Sectioned stylesheet** — the CSS is organized into commented blocks (reset → tokens → base → background → form → fields → button → social → responsive) for easy navigation
 
 ## Design Details
 
 | Element | Styling approach |
 |---|---|
-| Page background | Solid dark navy (`#080710`) |
-| Decorative shapes | Two absolutely-positioned circles with linear gradients (blue and orange), placed behind the form |
-| Form container | Semi-transparent white background, blurred backdrop, subtle border and shadow — the "frosted glass" effect |
-| Inputs | Full-width, softly tinted fields with rounded corners and light placeholder text |
-| Submit button | Solid white button with bold text for strong contrast against the dark theme |
+| Page background | Warm paper cream (`#f6f1e9`) |
+| Accent color | Deep teal (`#1e5f5a`), used for the eyebrow label, input focus ring, button, and link |
+| Typography | *Fraunces* (italic serif) for the heading, *Inter* (sans-serif) for labels, inputs, and body text |
+| Signature shape | A single soft, low-opacity teal circle in the top-left corner for subtle depth |
+| Card | White card with a soft shadow and rounded corners — no glass/blur effects, kept simple |
+| Inputs | Cream-tinted fields with a teal border and glow on focus |
+| Button | Solid teal, full-width, with a subtle hover fade |
 
 ## Roadmap
 
 - [ ] Add client-side form validation
 - [ ] Add a "Remember me" checkbox and "Forgot password?" link
-- [ ] Add social login buttons (styles already scaffolded in CSS)
+- [ ] Add social login buttons
 - [ ] Wire up actual authentication (backend integration)
-- [ ] Add dark/light theme toggle
+- [ ] Add a dark theme toggle
 
 ## Contributing
 
