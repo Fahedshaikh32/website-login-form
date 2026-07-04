@@ -62,16 +62,24 @@ xdg-open index.html
 start index.html
 ```
 
-> **Note:** The stylesheet is linked as `style.css` (lowercase) in `index.html`, while the file in this repo is named `Style.css`. On case-sensitive file systems (Linux, and GitHub Pages) this mismatch will break the styling — rename the file to `style.css` or update the `<link>` tag to match. See [Design Details](#design-details) below.
-
 ## Project Structure
 
 ```
 .
-├── index.html    # Page markup: background shapes + login form
-├── Style.css     # Glassmorphism styling, gradients, layout
+├── index.html         # Page markup: background shapes + login form
+├── css/
+│   └── style.css      # Glassmorphism styling, gradients, layout
 └── README.md
 ```
+
+The stylesheet lives under `css/` and uses lowercase, hyphen-free naming throughout, so the project behaves consistently on case-sensitive hosts (Linux servers, GitHub Pages) as well as Windows/macOS.
+
+### Code conventions
+
+- **Semantic HTML** — the page uses `<main>`, proper `<label for>`/`<input id>` pairing, and `autocomplete` hints instead of unlabeled divs
+- **BEM-style class names** — e.g. `login__form`, `login__submit`, `shape--blue` — so structure and intent are clear from the markup alone
+- **CSS custom properties** — colors, gradients, fonts, and border radii are defined once in a `:root` token block and reused, so the theme can be changed in one place
+- **Sectioned stylesheet** — the CSS is organized into commented blocks (reset → tokens → base → background → form → fields → button → social → responsive) for easy navigation
 
 ## Design Details
 
@@ -85,7 +93,6 @@ start index.html
 
 ## Roadmap
 
-- [ ] Fix `style.css` / `Style.css` filename casing to prevent broken styling on case-sensitive hosts
 - [ ] Add client-side form validation
 - [ ] Add a "Remember me" checkbox and "Forgot password?" link
 - [ ] Add social login buttons (styles already scaffolded in CSS)
